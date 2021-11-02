@@ -1,0 +1,65 @@
+/* https://www.schemecolor.com/vaporwave.php */
+
+body {
+    /* background-color: #300350; */
+    color: white;
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+h1 {
+    /* font-family: default; */
+}
+
+
+.title {
+    padding-top: 1%;
+}
+.title-text {
+    text-align: center;
+}
+
+.nav {
+    padding-top: 1%;
+}
+
+.nav-link {
+    color: white;
+}
+.nav-link:hover {
+    color: #d1d1d1;
+}
+.nav-link:focus {
+    color: #d1d1d1;
+}
+
+
+/* Background colors */
+
+@keyframes bgcolor {
+    0% {
+        background-color: #4a017a
+    }
+
+    20% {
+        background-color: #090b88
+    }
+
+    40% {
+        background-color: #08368d
+    }
+
+    60% {
+        background-color: #36098b
+    }
+
+    80% {
+        background-color: #83097d
+    }
+
+    100% {
+        background-color: #65057e
+    }
+}
