@@ -8,63 +8,44 @@ body {
     margin:0;
 }
 
-h1 {
-    /* font-family: default; */
+html {
+    cursor: url(/images/papaMouse.png) 0 15, auto;
 }
 
 
 .title {
     padding-top: 1%;
+    cursor: url(/images/papaMouse.png) 0 15, auto
 }
 .title-text {
     text-align: center;
+    cursor: url(/images/papaMouse.png) 0 15, auto
 }
 
 .nav {
     padding-top: 1%;
+    cursor: url(/images/papaMouse.png) 0 15, auto
 }
 
 .nav-link {
     color: white;
+    cursor: url(/images/papaMouse.png) 0 15, auto
 }
 .nav-link:hover {
     color: #d1d1d1;
+    cursor: url(/images/papaMouse.png) 0 15, auto;
 }
 .nav-link:focus {
     color: #d1d1d1;
+    cursor: url(/images/papaMouse.png) 0 15, auto
 }
 
-/* igor.html */
-.igor-picture {
-    padding: 5%;
-    text-align: center;
+.dropdown-item:focus {
+    cursor: url(/images/papaMouse.png) 0 15, auto
 }
-
-
-/* Background colors */
-
-@keyframes bgcolor {
-    0% {
-        background-color: #4a017a
-    }
-
-    20% {
-        background-color: #090b88
-    }
-
-    40% {
-        background-color: #08368d
-    }
-
-    60% {
-        background-color: #36098b
-    }
-
-    80% {
-        background-color: #83097d
-    }
-
-    100% {
-        background-color: #65057e
-    }
+.dropdown-item:hover {
+    cursor: url(/images/papaMouse.png) 0 15, auto;
+}
+.dropdown-item {
+    cursor: url(/images/papaMouse.png) 0 15, auto
 }
