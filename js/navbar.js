@@ -1,8 +1,16 @@
 document.write('<ul class="nav nav-pills justify-content-center">');
+
+    // Home
     document.write('<li class="nav-item">');
         document.write('<a class="nav-link" href="/index">Home</a>');
     document.write('</li>');
 
+    // Projects
+    document.write('<li class="nav-item">');
+        document.write('<a class="nav-link" href="/projects">Projects</a>');
+    document.write('</li>');
+
+    // Dropdown
     document.write('<li class="nav-item dropdown">');
         document.write('<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Fun Things</a>');
         document.write('<ul class="dropdown-menu">');
@@ -14,6 +22,7 @@ document.write('<ul class="nav nav-pills justify-content-center">');
         document.write('</ul>');
     document.write('</li>');
 
+    // About
     document.write('<li class="nav-item">');
         document.write('<a class="nav-link" href="/about">About</a>');
     document.write('</li>');
