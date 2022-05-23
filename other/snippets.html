@@ -20,16 +20,28 @@
 
         <div class="row">
             <div class="col-sm-3">
-                <!-- Add buttons to select what snippet to show. -->
+                <h4>Navigation:</h4>
+                <nav class="nav nav-pills flex-column">
+                    <a class="nav-link" href="#map_function">Map</a>
+                    <a class="nav-link ml-3 my-1" href="#bitshift_multiplication">Bitshift Multiplication</a>
+                </nav>
             </div>
 
             <div class="col-sm-6">
-                <div id="map_function" class="code-snippets">
-                    <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
-                
-                    <pre><code>int BitwiseMultiplication(int a, int n)<br>{<br>    return a <<= n - 1;<br>}</code></pre>
-
+                <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                    <h4 id="map_function">Map</h4>
+                    <div id="map_function" class="code-snippets">
+                        <p class="lead text-center">Useful for mapping from one range of numbers to another e.g. you can map a <samp>sin</samp> value from <samp>-1; 1</samp> to <samp>0; 100</samp>.</p>
+                        <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
+                    </div>
+                    <h5 id="bitshift_multiplication">Bitshift Multiplication</h5>
+                    <div id="bitshift_multiplication" class="code-snippets">
+                        <p class="lead text-center">Not too useful, but this function basically returns <samp>a*2<sup>n</sup></samp>.</p>
+                        <pre><code>int BitshiftMultiplication(int a, int n)<br>{<br>    return a <<= n - 1;<br>}</code></pre>
+                    </div>
                 </div>
+                
+                
             </div>
 
             <div class="col-sm-3">
