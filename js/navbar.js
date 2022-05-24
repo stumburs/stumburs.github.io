@@ -12,13 +12,13 @@ document.write('<ul class="nav nav-pills justify-content-center">');
 
     // Dropdown
     document.write('<li class="nav-item dropdown">');
-        document.write('<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Other</a>');
+        document.write('<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Other</a>');
         document.write('<ul class="dropdown-menu">');
             document.write('<li><a class="dropdown-item" href="/other/snippets">Code snippets</a></li>');
             document.write('<div class="dropdown-divider"></div>');
-            document.write('<li><a class="dropdown-item" href="#">Nothing</a></li>');
-            document.write('<li><a class="dropdown-item" href="#">Also nothing</a></li>');
-            document.write('<li><a class="dropdown-item" href="#">Literally nothing</a></li>');
+            document.write('<li><a class="dropdown-item">Nothing</a></li>');
+            document.write('<li><a class="dropdown-item">Also nothing</a></li>');
+            document.write('<li><a class="dropdown-item">Literally nothing</a></li>');
         document.write('</ul>');
     document.write('</li>');
 
