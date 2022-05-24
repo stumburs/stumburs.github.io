@@ -61,6 +61,17 @@ pre {
     padding-top: 10px;
 }
 
+.project {
+    /* padding-top: 10px; */
+    border-radius: 10px;
+    background: hsla(0, 0%, 12%, 0.2);
+}
+
+.project-image {
+    border-radius: 10px 10px 0 0;
+    max-width: 100%;
+}
+
 
 /* Background colors */
 
