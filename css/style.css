@@ -21,12 +21,12 @@ body {
 
 .title-text {
     padding-top: 1%;
-    padding-bottom: 5%;
     text-align: center;
 }
 
 .content {
     text-align: center;
+    margin: 2%;
 }
 
 .nav {
@@ -71,8 +71,11 @@ pre {
 }
 
 .project-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
     border-radius: 10px;
-    max-width: 100%;
+    /* max-width: 100%; */
 }
 
 
