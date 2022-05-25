@@ -38,12 +38,18 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#insertion_op_overloading">Insertion <<</a></li>
                         </ul>
+                        <!-- Other -->
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Other</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#size-of-array">Size Of Array</a></li>
+                        </ul>
                     </li>
                 </nav>
             </div>
 
             <div class="col-sm-6">
                 <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+                    <!-- MATH -->
                     <!-- Map -->
                     <div class="code-snippet" id="map-function">
                         <div class="snippet-title">
@@ -66,6 +72,7 @@
                         </div>
                     </div>
 
+                    <!-- OVERLOADING -->
                     <!-- Insertion operator overloading -->
                     <div class="code-snippet" id="insertion_op_overloading">
                         <div class="snippet-title">
@@ -77,6 +84,18 @@
                             <pre><code>std::ostream& operator<<(std::ostream &os, SomeClass& class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
                             <p class="lead text-center"><i>If placed INSIDE of class</i></p>
                             <pre><code>friend std::ostream& operator<<(std::ostream &os, const SomeClass& class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                        </div>
+                    </div>
+
+                    <!-- OTHER -->
+                    <!-- Size of array -->
+                    <div class="code-snippet" id="size-of-array">
+                        <div class="snippet-title">
+                            <h4>Size of array</h4>
+                        </div>
+                        <div class="snippet">
+                            <p class="lead text-center">Find the amount of elements inside an array.</p>
+                            <pre><code>int arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
                         </div>
                     </div>
 
