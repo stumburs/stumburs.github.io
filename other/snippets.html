@@ -27,10 +27,16 @@
                 <h4>Navigation</h4>
                 <nav class="nav nav-pills justify-content-center">
                     <li class="nav-item dropdown">
+                        <!-- Math -->
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Math</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#map_function">Map</a></li>
-                            <li><a class="dropdown-item" href="#bitshift_multiplication">Bitshift Multiplication</a></li>
+                            <li><a class="dropdown-item" href="#map-function">Map</a></li>
+                            <li><a class="dropdown-item" href="#bitshift-multiplication">Bitshift Multiplication</a></li>
+                        </ul>
+                        <!-- Overloading -->
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Overloading</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#insertion_op_overloading">Insertion <<</a></li>
                         </ul>
                     </li>
                 </nav>
@@ -38,19 +44,47 @@
 
             <div class="col-sm-6">
                 <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
-                    <h4 id="map_function">Map</h4>
-                    <div id="map_function" class="code-snippets">
-                        <p class="lead text-center">Useful for mapping from one range of numbers to another e.g. you can map a <samp>sin</samp> value from <samp>-1; 1</samp> to <samp>0; 100</samp>.</p>
-                        <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
+                    <!-- Map -->
+                    <div class="code-snippet" id="map-function">
+                        <div class="snippet-title">
+                            <h4>Map</h4>
+                        </div>
+                        <div class="snippet">
+                            <p class="lead text-center">Useful for mapping from one range of numbers to another e.g. you can map a <samp>sin</samp> value from <samp>-1; 1</samp> to <samp>0; 100</samp>.</p>
+                            <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
+                        </div>
                     </div>
-                    <h5 id="bitshift_multiplication">Bitshift Multiplication</h5>
-                    <div id="bitshift_multiplication" class="code-snippets">
-                        <p class="lead text-center">Not too useful, but this function basically returns <samp>a*2<sup>n</sup></samp>.</p>
-                        <pre><code>int BitshiftMultiplication(int a, int n)<br>{<br>    return a <<= n - 1;<br>}</code></pre>
+
+                    <!-- Bitshift Multiplication -->
+                    <div class="code-snippet" id="bitshift-multiplication">
+                        <div class="snippet-title">
+                            <h4>Bitshift Multiplication</h4>
+                        </div>
+                        <div class="snippet">
+                            <p class="lead text-center">Returns <samp>a*2<sup>n</sup></samp>.</p>
+                            <pre><code>int BitshiftMultiplication(int a, int n)<br>{<br>    return a <<= n - 1;<br>}</code></pre>
+                        </div>
                     </div>
+
+                    <!-- Insertion operator overloading -->
+                    <div class="code-snippet" id="insertion_op_overloading">
+                        <div class="snippet-title">
+                            <h4>Insertion operator << overloading for a class</h4>
+                        </div>
+                        <div class="snippet">
+                            <p class="lead text-center">Allows to simply <samp>std::cout << <i>SomeClass</i> << std::endl;</samp> with specific values.</p>
+                            <p class="lead text-center"><i>If placed OUTSIDE of class</i></p>
+                            <pre><code>std::ostream& operator<<(std::ostream &os, SomeClass& class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                            <p class="lead text-center"><i>If placed INSIDE of class</i></p>
+                            <pre><code>friend std::ostream& operator<<(std::ostream &os, const SomeClass& class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                        </div>
+                    </div>
+
                 </div>
                 
                 
+                
+
             </div>
 
             <div class="col-sm-3">

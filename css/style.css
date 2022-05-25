@@ -57,11 +57,14 @@ pre {
     padding: 10px;
     white-space: pre-wrap;
 }
-.code-snippets {
+.code-snippet {
     text-align: left;
     background: hsla(0, 0%, 12%, 0.2);
     border-radius: 10px;
     padding-top: 10px;
+}
+.snippet-title {
+    text-align: center;
 }
 
 .project {
