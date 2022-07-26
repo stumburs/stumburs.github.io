@@ -81,9 +81,9 @@
                         <div class="snippet">
                             <p class="lead text-center">Allows to simply <samp>std::cout << <i>SomeClass</i> << std::endl;</samp> with specific values.</p>
                             <p class="lead text-center"><i>If placed OUTSIDE of class</i></p>
-                            <pre><code>std::ostream& operator<<(std::ostream &os, SomeClass& class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                            <pre><code>std::ostream &operator<<(std::ostream &os, SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
                             <p class="lead text-center"><i>If placed INSIDE of class</i></p>
-                            <pre><code>friend std::ostream& operator<<(std::ostream &os, const SomeClass& class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                            <pre><code>friend std::ostream &operator<<(std::ostream &os, const SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
                         </div>
                     </div>
 
@@ -95,7 +95,7 @@
                         </div>
                         <div class="snippet">
                             <p class="lead text-center">Find the amount of elements inside an array.</p>
-                            <pre><code>int arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
+                            <pre><code>size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
                         </div>
                     </div>
 
