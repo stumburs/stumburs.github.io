@@ -1,117 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="/js/favicon.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Code snippets</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <script src="/js/favicon.js"></script>
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Code snippets</title>
+    </head>
+    <body>
+        <!-- Nav -->
+        <script src="/js/navbar.js"></script>
 
-    <!-- Nav -->
-    <script src="/js/navbar.js"></script>
+        <div class="title-text">
+            <h1 class="title display-1">Code snippets</h1>
+        </div>
 
-    <div class="title-text">
-        <h1 class="title display-1">Code snippets</h1>
-    </div>
+        <div class="content">
+            <p class="lead text-center">
+                Some useful pieces of code I tend to use in some of my projects.
+                (Primarily for C/C++)
+            </p>
 
-    <div class="content">
-
-        <p class="lead text-center">Some useful pieces of code I tend to use in some of my projects. (Primarily for C/C++)</p>
-
-        <div class="row">
-            <div class="col-sm-3">
-                <h4>Navigation</h4>
-                <nav class="nav nav-pills justify-content-center">
-                    <li class="nav-item dropdown">
-                        <!-- Math -->
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Math</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#map-function">Map</a></li>
-                            <li><a class="dropdown-item" href="#bitshift-multiplication">Bitshift Multiplication</a></li>
-                        </ul>
-                        <!-- Overloading -->
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Overloading</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#insertion_op_overloading">Insertion <<</a></li>
-                        </ul>
-                        <!-- Other -->
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Other</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#size-of-array">Size Of Array</a></li>
-                        </ul>
-                    </li>
-                </nav>
-            </div>
-
-            <div class="col-sm-6">
-                <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
-                    <!-- MATH -->
-                    <!-- Map -->
-                    <div class="code-snippet" id="map-function">
-                        <div class="snippet-title">
-                            <h4>Map</h4>
-                        </div>
-                        <div class="snippet">
-                            <p class="lead text-center">Useful for mapping from one range of numbers to another e.g. you can map a <samp>sin</samp> value from <samp>-1; 1</samp> to <samp>0; 100</samp>.</p>
-                            <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
-                        </div>
-                    </div>
-
-                    <!-- Bitshift Multiplication -->
-                    <div class="code-snippet" id="bitshift-multiplication">
-                        <div class="snippet-title">
-                            <h4>Bitshift Multiplication</h4>
-                        </div>
-                        <div class="snippet">
-                            <p class="lead text-center">Returns <samp>a*2<sup>n</sup></samp>.</p>
-                            <pre><code>int BitshiftMultiplication(int a, int n)<br>{<br>    return a <<= n - 1;<br>}</code></pre>
-                        </div>
-                    </div>
-
-                    <!-- OVERLOADING -->
-                    <!-- Insertion operator overloading -->
-                    <div class="code-snippet" id="insertion_op_overloading">
-                        <div class="snippet-title">
-                            <h4>Insertion operator << overloading for a class</h4>
-                        </div>
-                        <div class="snippet">
-                            <p class="lead text-center">Allows to simply <samp>std::cout << <i>SomeClass</i> << std::endl;</samp> with specific values.</p>
-                            <p class="lead text-center"><i>If placed OUTSIDE of class</i></p>
-                            <pre><code>std::ostream &operator<<(std::ostream &os, SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
-                            <p class="lead text-center"><i>If placed INSIDE of class</i></p>
-                            <pre><code>friend std::ostream &operator<<(std::ostream &os, const SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
-                        </div>
-                    </div>
-
-                    <!-- OTHER -->
-                    <!-- Size of array -->
-                    <div class="code-snippet" id="size-of-array">
-                        <div class="snippet-title">
-                            <h4>Size of array</h4>
-                        </div>
-                        <div class="snippet">
-                            <p class="lead text-center">Find the amount of elements inside an array.</p>
-                            <pre><code>size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
-                        </div>
-                    </div>
-
+            <div class="row">
+                <div class="col-sm-3">
+                    <h4>Navigation</h4>
+                    <nav class="nav nav-pills justify-content-center">
+                        <li class="nav-item dropdown">
+                            <!-- Math -->
+                            <a
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                role="button"
+                                aria-expanded="false"
+                                >Math</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="#map-function"
+                                        >Map</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="#bitshift-multiplication"
+                                        >Bitshift Multiplication</a
+                                    >
+                                </li>
+                            </ul>
+                            <!-- Overloading -->
+                            <a
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                role="button"
+                                aria-expanded="false"
+                                >Overloading</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="#insertion_op_overloading"
+                                        >Insertion <<</a
+                                    >
+                                </li>
+                            </ul>
+                            <!-- Other -->
+                            <a
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                role="button"
+                                aria-expanded="false"
+                                >Other</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="#size-of-array"
+                                        >Size Of Array</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </nav>
                 </div>
-                
-                
-                
 
-            </div>
+                <div class="col-sm-6">
+                    <div
+                        data-spy="scroll"
+                        data-target="#navbar-example3"
+                        data-offset="0"
+                    >
+                        <!-- MATH -->
+                        <!-- Map -->
+                        <div class="code-snippet" id="map-function">
+                            <div class="snippet-title">
+                                <h4>Map</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Useful for mapping from one range of numbers
+                                    to another e.g. you can map a
+                                    <samp>sin</samp> value from
+                                    <samp>-1; 1</samp> to <samp>0; 100</samp>.
+                                </p>
+                                <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
+                            </div>
+                        </div>
 
-            <div class="col-sm-3">
-                <!-- Temporary spot -->
+                        <!-- Bitshift Multiplication -->
+                        <div class="code-snippet" id="bitshift-multiplication">
+                            <div class="snippet-title">
+                                <h4>Bitshift Multiplication</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Returns <samp>a*2<sup>n</sup></samp
+                                    >.
+                                </p>
+                                <pre><code>int BitshiftMultiplication(int a, int n)<br>{<br>    return a <<= n - 1;<br>}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- OVERLOADING -->
+                        <!-- Insertion operator overloading -->
+                        <div class="code-snippet" id="insertion_op_overloading">
+                            <div class="snippet-title">
+                                <h4>
+                                    Insertion operator << overloading for a
+                                    class
+                                </h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Allows to simply
+                                    <samp
+                                        >std::cout << <i>SomeClass</i> <<
+                                        std::endl;</samp
+                                    >
+                                    with specific values.
+                                </p>
+                                <p class="lead text-center">
+                                    <i>If placed OUTSIDE of class</i>
+                                </p>
+                                <pre><code>std::ostream &operator<<(std::ostream &os, SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                                <p class="lead text-center">
+                                    <i>If placed INSIDE of class</i>
+                                </p>
+                                <pre><code>friend std::ostream &operator<<(std::ostream &os, const SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- OTHER -->
+                        <!-- Size of array -->
+                        <div class="code-snippet" id="size-of-array">
+                            <div class="snippet-title">
+                                <h4>Size of array</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Find the amount of elements inside an array.
+                                </p>
+                                <pre><code>size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <!-- Temporary spot -->
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-</body>
+        <!-- Footer -->
+        <script src="/js/footer.js"></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>

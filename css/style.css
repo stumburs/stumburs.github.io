@@ -1,7 +1,6 @@
 /* https://www.schemecolor.com/vaporwave.php */
 
 body {
-    /* background-color: #300350; */
     color: white;
     -webkit-animation: bgcolor 20s infinite;
     animation: bgcolor 10s infinite;
@@ -15,8 +14,11 @@ body {
     display: none;
 }
 body {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .title-text {
@@ -46,7 +48,7 @@ body {
 .row {
     display: flex;
 }
-  
+
 .column {
     flex: 50%;
 }
@@ -68,7 +70,6 @@ pre {
 }
 
 .project {
-    /* padding-top: 10px; */
     border-radius: 10px;
     background: hsla(0, 0%, 12%, 0.2);
 }
@@ -78,34 +79,42 @@ pre {
     width: 100%;
     object-fit: contain;
     border-radius: 10px;
-    /* max-width: 100%; */
 }
 
+/* FOOTER */
+.footer {
+    margin-top: auto;
+    bottom: 0;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.5);
+}
 
 /* Background colors */
 
 @keyframes bgcolor {
     0% {
-        background-color: #4a017a
+        background-color: #4a017a;
     }
 
     20% {
-        background-color: #090b88
+        background-color: #090b88;
     }
 
     40% {
-        background-color: #08368d
+        background-color: #08368d;
     }
 
     60% {
-        background-color: #36098b
+        background-color: #36098b;
     }
 
     80% {
-        background-color: #83097d
+        background-color: #83097d;
     }
 
     100% {
-        background-color: #65057e
+        background-color: #65057e;
     }
 }
