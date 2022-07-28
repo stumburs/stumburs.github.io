@@ -30,84 +30,94 @@
 
             <div class="row">
                 <div class="col-sm-3">
-                    <h4>Navigation</h4>
-                    <nav class="nav nav-pills justify-content-center">
-                        <li class="nav-item dropdown">
-                            <!-- Math -->
-                            <a
-                                class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown"
-                                role="button"
-                                aria-expanded="false"
-                                >Math</a
-                            >
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="#map-function"
-                                        >Map</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="#bitshift-multiplication"
-                                        >Bitshift Multiplication</a
-                                    >
-                                </li>
-                            </ul>
-                            <!-- Overloading -->
-                            <a
-                                class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown"
-                                role="button"
-                                aria-expanded="false"
-                                >Overloading</a
-                            >
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="#insertion_op_overloading"
-                                        >Insertion <<</a
-                                    >
-                                </li>
-                            </ul>
-                            <!-- Conversion -->
-                            <a
-                                class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown"
-                                role="button"
-                                aria-expanded="false"
-                                >Conversion</a
-                            >
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="#rgb-to-hex"
-                                        >RGB to HEX</a
-                                    >
-                                </li>
-                            </ul>
-                            <!-- Other -->
-                            <a
-                                class="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown"
-                                role="button"
-                                aria-expanded="false"
-                                >Other</a
-                            >
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a
-                                        class="dropdown-item"
-                                        href="#size-of-array"
-                                        >Size Of Array</a
-                                    >
-                                </li>
-                            </ul>
-                        </li>
-                    </nav>
+                    <div class="snippets-nav">
+                        <h4>Navigation</h4>
+
+                        <nav class="nav nav-pills justify-content-center">
+                            <li class="nav-item dropdown">
+                                <!-- Math -->
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    role="button"
+                                    aria-expanded="false"
+                                    >Math</a
+                                >
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#map-function"
+                                            >Map</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#bitshift-multiplication"
+                                            >Bitshift Multiplication</a
+                                        >
+                                    </li>
+                                </ul>
+                                <!-- Overloading -->
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    role="button"
+                                    aria-expanded="false"
+                                    >Overloading</a
+                                >
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#insertion_op_overloading-class"
+                                            >Insertion << for a class</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#insertion_op_overloading-1d-vec"
+                                            >Insertion << for a 1D vector</a
+                                        >
+                                    </li>
+                                </ul>
+                                <!-- Conversion -->
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    role="button"
+                                    aria-expanded="false"
+                                    >Conversion</a
+                                >
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#rgb-to-hex"
+                                            >RGB to HEX</a
+                                        >
+                                    </li>
+                                </ul>
+                                <!-- Other -->
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    role="button"
+                                    aria-expanded="false"
+                                    >Other</a
+                                >
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#size-of-array"
+                                            >Size Of Array</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                        </nav>
+                    </div>
                 </div>
 
                 <div class="col-sm-6">
@@ -149,7 +159,10 @@
 
                         <!-- OVERLOADING -->
                         <!-- Insertion operator overloading -->
-                        <div class="code-snippet" id="insertion_op_overloading">
+                        <div
+                            class="code-snippet"
+                            id="insertion_op_overloading-class"
+                        >
                             <div class="snippet-title">
                                 <h4>
                                     Insertion operator << overloading for a
@@ -173,6 +186,29 @@
                                     <i>If placed INSIDE of class</i>
                                 </p>
                                 <pre><code>friend std::ostream &operator<<(std::ostream &os, const SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                            </div>
+                        </div>
+
+                        <div
+                            class="code-snippet"
+                            id="insertion_op_overloading-1d-vec"
+                        >
+                            <div class="snippet-title">
+                                <h4>
+                                    Insertion operator << overloading for a 1D
+                                    vector
+                                </h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Allows to simply
+                                    <samp
+                                        >std::cout << <i>vec</i> <<
+                                        std::endl;</samp
+                                    >
+                                    of most primary data types.
+                                </p>
+                                <pre><code>template &lttypename T><br>std::ostream &operator<<(std::ostream &os, const std::vector<T> &vec)<br>{<br>    for (int i : vec)<br>        os << i << ' ';<br>    return os;<br>}</code></pre>
                             </div>
                         </div>
 

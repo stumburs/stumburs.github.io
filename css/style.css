@@ -69,6 +69,11 @@ pre {
     text-align: center;
 }
 
+.snippets-nav {
+    position: sticky;
+    top: 10vh;
+}
+
 .project {
     border-radius: 10px;
     background: hsla(0, 0%, 12%, 0.2);
