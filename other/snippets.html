@@ -74,6 +74,21 @@
                                     >
                                 </li>
                             </ul>
+                            <!-- Conversion -->
+                            <a
+                                class="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                                role="button"
+                                aria-expanded="false"
+                                >Conversion</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="#rgb-to-hex"
+                                        >RGB to HEX</a
+                                    >
+                                </li>
+                            </ul>
                             <!-- Other -->
                             <a
                                 class="nav-link dropdown-toggle"
@@ -158,6 +173,23 @@
                                     <i>If placed INSIDE of class</i>
                                 </p>
                                 <pre><code>friend std::ostream &operator<<(std::ostream &os, const SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Conversion -->
+                        <!-- RGB to HEX -->
+                        <div class="code-snippet" id="rgb-to-hex">
+                            <div class="snippet-title">
+                                <h4>RGB to HEX</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Returns a 6 character long HEX number as
+                                    <samp>std::string</samp> from 3
+                                    <samp>int</samp> type RGB values ranging
+                                    <samp>0-255</samp>.
+                                </p>
+                                <pre><code>#include &ltiomanip><br>#include &ltsstream><br>std::string RGBToHEX(int r, int g, int b)<br>{<br>    int values[] = {r, g, b};<br>    std::stringstream sstream;<br>    for (int &v : values)<br>    {<br>        v = v < 0 ? v = 0 : v > 255 ? v = 255 : v;<br>        sstream << std::uppercase << std::setw(2) << std::setfill('0') << std::hex << v;<br>    }<br>    return sstream.str();<br>}</code></pre>
                             </div>
                         </div>
 
