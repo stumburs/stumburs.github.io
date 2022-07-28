@@ -208,7 +208,7 @@
                                     >
                                     of most primary data types.
                                 </p>
-                                <pre><code>template &lttypename T><br>std::ostream &operator<<(std::ostream &os, const std::vector<T> &vec)<br>{<br>    for (int i : vec)<br>        os << i << ' ';<br>    return os;<br>}</code></pre>
+                                <pre><code>template &lttypename T><br>std::ostream &operator<<(std::ostream &os, const std::vector<T> &vec)<br>{<br>    for (T i : vec)<br>        os << i << ' ';<br>    return os;<br>}</code></pre>
                             </div>
                         </div>
 
