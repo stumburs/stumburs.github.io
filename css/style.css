@@ -95,6 +95,43 @@ pre {
     margin: 0;
 }
 
+/* LINKS */
+.my-link {
+    transition: all 0.05s ease-in-out;
+    width: 20vh;
+    height: auto;
+    margin: auto;
+    background: hsla(0, 0%, auto, 0.2);
+    border-radius: 10px;
+    padding-top: 10px;
+}
+
+.link-row {
+    margin: 0 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-link:hover {
+    transform: scale(1.1);
+}
+
+.my-link img {
+    height: 100%;
+    width: 100%;
+}
+
+.my-link a {
+    text-decoration: none;
+}
+
+.link-name {
+    background-color: none;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
 /* FOOTER */
 .footer {
     margin-top: auto;
