@@ -98,14 +98,14 @@ pre {
 /* LINKS */
 .my-link {
     transition: all 0.05s ease-in-out;
-    width: 10vw;
+    width: 8vw;
     height: auto;
     margin: auto;
     background: hsla(0, 0%, auto, 0.2);
 }
 
 .link-row {
-    margin: 0 20vw;
+    margin: 5vh 20vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,6 +125,7 @@ pre {
 }
 
 .link-name {
+    margin-top: 5%;
     background-color: none;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5);
