@@ -23,9 +23,51 @@
         </div>
         <div class="content">
             <p class="lead text-center">
-                I have no clue what I'm gonna be doing with this site.
+                This <i>wonderful</i> place was created out of my pure joy for
+                web development and everything it offers. ☺
             </p>
-            <p class="lead text-center">Yes.</p>
+            <div class="about-reasons">
+                <p class="lead text-center">
+                    Actual reasons why this site exists:
+                </p>
+                <div class="list-of-reasons">
+                    <ol>
+                        <li>
+                            <p class="lead text-left">
+                                I wanted my own website. For some reason. It's
+                                cool, I guess.
+                            </p>
+                        </li>
+
+                        <li>
+                            <p class="lead text-left">
+                                I learned quite a lot of HTML, CSS, JS, other
+                                abbreviations while creating this masterpiece.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="lead text-left">
+                                This place turned into something
+                                <i>kinda</i> useful. Some code snippets for
+                                myself. A place to show off my
+                                <i>"projects"</i>, etc., so on and so forth.
+                            </p>
+                        </li>
+                        <li>
+                            <p class="lead text-left">Yes</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="about-disclaimer">
+                <p class="lead text-left">
+                    Please don't visit this work of art on any mobile device
+                    with a touch screen because I have done literally nothing to
+                    optimize or design for those. If you are currently on one of
+                    those fancy devices... I am sorry.
+                    <a href="#" onclick="close_window();return false;">Leave</a>
+                </p>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -36,5 +78,20 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"
         ></script>
+
+        <!-- Close window function -->
+        <script>
+            function close_window() {
+                confirm(
+                    "This is where I tried to make the window close, but I couldn't be bothered to create a whole seperate workaround to an error."
+                );
+                confirm("So in the meanwhile, enjoy this doggo.");
+                window.open(
+                    "/about/doggo.html",
+                    "_blank",
+                    "resizable,height=300,width=450"
+                );
+            }
+        </script>
     </body>
 </html>
