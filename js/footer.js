@@ -1,5 +1,5 @@
 document.write('<div class="footer">');
 document.write(
-    '<p class="lead text-center footer-text">Updated: 15 Aug 2022</p>'
+    '<p class="lead text-center footer-text">Updated: 24 Sep 2022</p>'
 );
 document.write("</div>");
