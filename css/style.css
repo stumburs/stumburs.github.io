@@ -58,6 +58,8 @@ pre {
     border-radius: 10px;
     padding: 10px;
     white-space: pre-wrap;
+    display: block;
+    white-space: pre-wrap;
 }
 .code-snippet {
     text-align: left;
@@ -65,6 +67,10 @@ pre {
     border-radius: 10px;
     padding-top: 10px;
 }
+
+code {
+}
+
 .snippet-title {
     text-align: center;
 }

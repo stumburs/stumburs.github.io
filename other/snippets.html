@@ -2,8 +2,14 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -11,7 +17,10 @@
             crossorigin="anonymous"
         />
         <script src="/js/favicon.js"></script>
-        <link rel="stylesheet" href="/css/style.css" />
+        <link
+            rel="stylesheet"
+            href="/css/style.css"
+        />
         <title>Code snippets</title>
     </head>
     <body>
@@ -23,10 +32,7 @@
         </div>
 
         <div class="content">
-            <p class="lead text-center">
-                Some useful pieces of code I tend to use in some of my projects.
-                (Primarily for C/C++)
-            </p>
+            <p class="lead text-center">Some useful pieces of code I tend to use in some of my projects. (Primarily for C/C++)</p>
 
             <div class="row">
                 <div class="col-sm-3">
@@ -112,6 +118,13 @@
                                     <li>
                                         <a
                                             class="dropdown-item"
+                                            href="#scoped-timer"
+                                            >Scoped timer</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
                                             href="#size-of-array"
                                             >Size Of Array</a
                                         >
@@ -130,23 +143,27 @@
                     >
                         <!-- MATH -->
                         <!-- Map -->
-                        <div class="code-snippet" id="map-function">
+                        <div
+                            class="code-snippet"
+                            id="map-function"
+                        >
                             <div class="snippet-title">
                                 <h4>Map</h4>
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
-                                    Useful for mapping from one range of numbers
-                                    to another e.g. you can map a
-                                    <samp>sin</samp> value from
-                                    <samp>-1; 1</samp> to <samp>0; 100</samp>.
+                                    Useful for mapping from one range of numbers to another e.g. you can map a
+                                    <samp>sin</samp> value from <samp>-1; 1</samp> to <samp>0; 100</samp>.
                                 </p>
                                 <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
                             </div>
                         </div>
 
                         <!-- Bitshift Multiplication -->
-                        <div class="code-snippet" id="bitshift-multiplication">
+                        <div
+                            class="code-snippet"
+                            id="bitshift-multiplication"
+                        >
                             <div class="snippet-title">
                                 <h4>Bitshift Multiplication</h4>
                             </div>
@@ -166,18 +183,12 @@
                             id="insertion_op_overloading-class"
                         >
                             <div class="snippet-title">
-                                <h4>
-                                    Insertion operator << overloading for a
-                                    class
-                                </h4>
+                                <h4>Insertion operator << overloading for a class</h4>
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
                                     Allows to simply
-                                    <samp
-                                        >std::cout << <i>SomeClass</i> <<
-                                        std::endl;</samp
-                                    >
+                                    <samp>std::cout << <i>SomeClass</i> << std::endl;</samp>
                                     with specific values.
                                 </p>
                                 <p class="lead text-center">
@@ -196,18 +207,12 @@
                             id="insertion_op_overloading-1d-vec"
                         >
                             <div class="snippet-title">
-                                <h4>
-                                    Insertion operator << overloading for a 1D
-                                    vector
-                                </h4>
+                                <h4>Insertion operator << overloading for a 1D vector</h4>
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
                                     Allows to simply
-                                    <samp
-                                        >std::cout << <i>vec</i> <<
-                                        std::endl;</samp
-                                    >
+                                    <samp>std::cout << <i>vec</i> << std::endl;</samp>
                                     of most primary data types.
                                 </p>
                                 <pre><code>template &lttypename T><br>std::ostream &operator<<(std::ostream &os, const std::vector&ltT> &vec)<br>{<br>    for (T i : vec)<br>        os << i << ' ';<br>    return os;<br>}</code></pre>
@@ -216,31 +221,46 @@
 
                         <!-- Conversion -->
                         <!-- RGB to HEX -->
-                        <div class="code-snippet" id="rgb-to-hex">
+                        <div
+                            class="code-snippet"
+                            id="rgb-to-hex"
+                        >
                             <div class="snippet-title">
                                 <h4>RGB to HEX</h4>
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
                                     Returns a 6 character long HEX number as
-                                    <samp>std::string</samp> from 3
-                                    <samp>int</samp> type RGB values ranging
-                                    <samp>0-255</samp>.
+                                    <samp>std::string</samp> from 3 <samp>int</samp> type RGB values ranging <samp>0-255</samp>.
                                 </p>
                                 <pre><code>#include &ltiomanip><br>#include &ltsstream><br>std::string RGBToHEX(int r, int g, int b)<br>{<br>    int values[] = {r, g, b};<br>    std::stringstream sstream;<br>    for (int &v : values)<br>    {<br>        v = v < 0 ? v = 0 : v > 255 ? v = 255 : v;<br>        sstream << std::uppercase << std::setw(2) << std::setfill('0') << std::hex << v;<br>    }<br>    return sstream.str();<br>}</code></pre>
                             </div>
                         </div>
 
                         <!-- OTHER -->
+                        <!-- Scoped Timer -->
+                        <div
+                            class="code-snippet"
+                            id="scoped-timer"
+                        >
+                            <div class="snippet-title">
+                                <h4>Scoped timer</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">Outputs scope lifetime in &#181;s<br />Instantiate object to start timing. Timing stops when object destructed.</p>
+                                <pre><code>#include &ltiostream&gt<br>#include &ltchrono&gt<br><br>struct Timer<br>{<br>    std::chrono::time_point&ltstd::chrono::high_resolution_clock&gt start, end;<br><br>    Timer()<br>    {<br>        start = std::chrono::high_resolution_clock::now();<br>    }<br><br>    ~Timer()<br>    {<br>        end = std::chrono::high_resolution_clock::now();<br>        auto ms = std::chrono::duration_cast&ltstd::chrono::microseconds&gt(end - start);<br>        std::cout << "Timer took " << ms.count() << "us\n";<br>    }<br>};</code></pre>
+                            </div>
+                        </div>
                         <!-- Size of array -->
-                        <div class="code-snippet" id="size-of-array">
+                        <div
+                            class="code-snippet"
+                            id="size-of-array"
+                        >
                             <div class="snippet-title">
                                 <h4>Size of array</h4>
                             </div>
                             <div class="snippet">
-                                <p class="lead text-center">
-                                    Find the amount of elements inside an array.
-                                </p>
+                                <p class="lead text-center">Find the amount of elements inside an array.</p>
                                 <pre><code>size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
                             </div>
                         </div>
