@@ -1,9 +1,7 @@
-/* https://www.schemecolor.com/vaporwave.php */
-
 body {
     color: white;
     position: relative;
-    background: linear-gradient(-45deg, #062969, #27086b, #6f0b72, #800647);
+    background: linear-gradient(-45deg, #012569, #800647);
     background-size: 400% 400%;
     animation: gradient 15s linear infinite;
     height: 100%;
@@ -142,12 +140,12 @@ pre {
 
 /* ABOUT */
 .about-reasons {
-    margin-top: 5vh;
+    margin-top: 10px;
     text-align: center;
 }
 
 .about-reasons p {
-    margin-bottom: 1%;
+    margin-bottom: 10px;
 }
 
 .list-of-reasons {
@@ -157,7 +155,7 @@ pre {
 }
 
 .about-disclaimer {
-    margin-top: 5vh;
+    margin-top: 10px;
     width: 50vw;
     display: inline-block;
     text-align: left;
