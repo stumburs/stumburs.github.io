@@ -32,7 +32,10 @@
         </div>
 
         <div class="content">
-            <p class="lead text-center">Some useful pieces of code I tend to use in some of my projects. (Primarily for C/C++)</p>
+            <p class="lead text-center">
+                Some useful pieces of code I tend to use in some of my projects.
+                (Primarily for C/C++)
+            </p>
 
             <div class="row">
                 <div class="col-sm-3">
@@ -106,6 +109,23 @@
                                         >
                                     </li>
                                 </ul>
+                                <!-- Sorting -->
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    role="button"
+                                    aria-expanded="false"
+                                    >Sorting</a
+                                >
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#3d-vector-sort-by-amount"
+                                            >3D Vector Sorting by Amount</a
+                                        >
+                                    </li>
+                                </ul>
                                 <!-- Other -->
                                 <a
                                     class="nav-link dropdown-toggle"
@@ -152,8 +172,10 @@
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
-                                    Useful for mapping from one range of numbers to another e.g. you can map a
-                                    <samp>sin</samp> value from <samp>-1; 1</samp> to <samp>0; 100</samp>.
+                                    Useful for mapping from one range of numbers
+                                    to another e.g. you can map a
+                                    <samp>sin</samp> value from
+                                    <samp>-1; 1</samp> to <samp>0; 100</samp>.
                                 </p>
                                 <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
                             </div>
@@ -183,12 +205,18 @@
                             id="insertion_op_overloading-class"
                         >
                             <div class="snippet-title">
-                                <h4>Insertion operator << overloading for a class</h4>
+                                <h4>
+                                    Insertion operator << overloading for a
+                                    class
+                                </h4>
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
                                     Allows to simply
-                                    <samp>std::cout << <i>SomeClass</i> << std::endl;</samp>
+                                    <samp
+                                        >std::cout << <i>SomeClass</i> <<
+                                        std::endl;</samp
+                                    >
                                     with specific values.
                                 </p>
                                 <p class="lead text-center">
@@ -207,12 +235,18 @@
                             id="insertion_op_overloading-1d-vec"
                         >
                             <div class="snippet-title">
-                                <h4>Insertion operator << overloading for a 1D vector</h4>
+                                <h4>
+                                    Insertion operator << overloading for a 1D
+                                    vector
+                                </h4>
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
                                     Allows to simply
-                                    <samp>std::cout << <i>vec</i> << std::endl;</samp>
+                                    <samp
+                                        >std::cout << <i>vec</i> <<
+                                        std::endl;</samp
+                                    >
                                     of most primary data types.
                                 </p>
                                 <pre><code>template &lttypename T><br>std::ostream &operator<<(std::ostream &os, const std::vector&ltT> &vec)<br>{<br>    for (T i : vec)<br>        os << i << ' ';<br>    return os;<br>}</code></pre>
@@ -231,9 +265,61 @@
                             <div class="snippet">
                                 <p class="lead text-center">
                                     Returns a 6 character long HEX number as
-                                    <samp>std::string</samp> from 3 <samp>int</samp> type RGB values ranging <samp>0-255</samp>.
+                                    <samp>std::string</samp> from 3
+                                    <samp>int</samp> type RGB values ranging
+                                    <samp>0-255</samp>.
                                 </p>
                                 <pre><code>#include &ltiomanip><br>#include &ltsstream><br>std::string RGBToHEX(int r, int g, int b)<br>{<br>    int values[] = {r, g, b};<br>    std::stringstream sstream;<br>    for (int &v : values)<br>    {<br>        v = v < 0 ? v = 0 : v > 255 ? v = 255 : v;<br>        sstream << std::uppercase << std::setw(2) << std::setfill('0') << std::hex << v;<br>    }<br>    return sstream.str();<br>}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- Sorting -->
+                        <!-- 3D vector sorting by amount -->
+                        <div
+                            class="code-snippet"
+                            id="3d-vector-sort-by-amount"
+                        >
+                            <div class="snippet-title">
+                                <h4>3D Vector Sorting by Amount</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Sorts a 3 dimensional vector by the amount
+                                    of elements in the innermost vector.
+                                </p>
+                                <!-- Re-do code snippets due to prettier complaining. -->
+                                <pre><code>std::vector<std::vector<std::vector<int>>> sort_3d_vector_by_amount_of_values(const std::vector<std::vector<std::vector<int>>>& vec)
+{
+    // Flatten the 3D vector to a 2D vector
+    std::vector<std::vector<int>> flat_vec;
+    
+        for (const auto& vec2d : vec)
+        for (const auto& vec1d : vec2d)
+            flat_vec.push_back(vec1d);
+
+    // Sort the 2D vector based on the size of the innermost vectors
+    auto sort_by_amount = [](const std::vector<int>& a, const std::vector<int>& b)
+    {
+        return a.size() < b.size();
+    };
+
+    sort(flat_vec.begin(), flat_vec.end(), sort_by_amount);
+
+    // Reconstruct the 3D vector from the sorted 2D vector
+    std::vector<std::vector<std::vector<int>>> sorted_vec3d;
+    int flat_vec_index = 0;
+
+    for (const auto& vec2d : vec)
+    {
+        std::vector<std::vector<int>> sorted_vec2d;
+        for (const auto& vec1d : vec2d)
+            sorted_vec2d.push_back(flat_vec[flat_vec_index++]);
+        sorted_vec3d.push_back(sorted_vec2d);
+    }
+
+    return sorted_vec3d;
+}
+</code></pre>
                             </div>
                         </div>
 
@@ -247,7 +333,11 @@
                                 <h4>Scoped timer</h4>
                             </div>
                             <div class="snippet">
-                                <p class="lead text-center">Outputs scope lifetime in &#181;s<br />Instantiate object to start timing. Timing stops when object destructed.</p>
+                                <p class="lead text-center">
+                                    Outputs scope lifetime in &#181;s<br />Instantiate
+                                    object to start timing. Timing stops when
+                                    object destructed.
+                                </p>
                                 <pre><code>#include &ltiostream&gt<br>#include &ltchrono&gt<br><br>struct Timer<br>{<br>    std::chrono::time_point&ltstd::chrono::high_resolution_clock&gt start, end;<br><br>    Timer()<br>    {<br>        start = std::chrono::high_resolution_clock::now();<br>    }<br><br>    ~Timer()<br>    {<br>        end = std::chrono::high_resolution_clock::now();<br>        auto ms = std::chrono::duration_cast&ltstd::chrono::microseconds&gt(end - start);<br>        std::cout << "Timer took " << ms.count() << "us\n";<br>    }<br>};</code></pre>
                             </div>
                         </div>
@@ -260,7 +350,9 @@
                                 <h4>Size of array</h4>
                             </div>
                             <div class="snippet">
-                                <p class="lead text-center">Find the amount of elements inside an array.</p>
+                                <p class="lead text-center">
+                                    Find the amount of elements inside an array.
+                                </p>
                                 <pre><code>size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
                             </div>
                         </div>
