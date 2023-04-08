@@ -286,40 +286,40 @@
                                 <p class="lead text-center">
                                     Sorts a 3 dimensional vector by the amount
                                     of elements in the innermost vector.
+                                    <br />Note: this code snippet has been run
+                                    through ChatGPT to format it properly for
+                                    HTML, so don't be surprised if it looks
+                                    weird or doesn't work.
                                 </p>
                                 <!-- Re-do code snippets due to prettier complaining. -->
-                                <pre><code>std::vector<std::vector<std::vector<int>>> sort_3d_vector_by_amount_of_values(const std::vector<std::vector<std::vector<int>>>& vec)
+                                <pre><code>std::vector&ltstd::vector&ltstd::vector&ltint&gt&gt&gt sort_3d_vector_by_amount_of_values(const std::vector&ltstd::vector&ltstd::vector&ltint&gt&gt&gt&amp; vec)
 {
     // Flatten the 3D vector to a 2D vector
-    std::vector<std::vector<int>> flat_vec;
-    
-        for (const auto& vec2d : vec)
-        for (const auto& vec1d : vec2d)
+    std::vector&ltstd::vector&ltint&gt&gt flat_vec;
+    for (const auto&amp; vec2d : vec)
+        for (const auto&amp; vec1d : vec2d)
             flat_vec.push_back(vec1d);
 
     // Sort the 2D vector based on the size of the innermost vectors
-    auto sort_by_amount = [](const std::vector<int>& a, const std::vector<int>& b)
+    auto sort_by_amount = [](const std::vector&ltint&gt&amp; a, const std::vector&ltint&gt&amp; b)
     {
-        return a.size() < b.size();
+        return a.size() &lt; b.size();
     };
-
-    sort(flat_vec.begin(), flat_vec.end(), sort_by_amount);
+    std::sort(flat_vec.begin(), flat_vec.end(), sort_by_amount);
 
     // Reconstruct the 3D vector from the sorted 2D vector
-    std::vector<std::vector<std::vector<int>>> sorted_vec3d;
+    std::vector&ltstd::vector&ltstd::vector&ltint&gt&gt&gt sorted_vec3d;
     int flat_vec_index = 0;
-
-    for (const auto& vec2d : vec)
+    for (const auto&amp; vec2d : vec)
     {
-        std::vector<std::vector<int>> sorted_vec2d;
-        for (const auto& vec1d : vec2d)
+        std::vector&ltstd::vector&ltint&gt&gt sorted_vec2d;
+        for (const auto&amp; vec1d : vec2d)
             sorted_vec2d.push_back(flat_vec[flat_vec_index++]);
         sorted_vec3d.push_back(sorted_vec2d);
     }
 
     return sorted_vec3d;
-}
-</code></pre>
+}</code></pre>
                             </div>
                         </div>
 
