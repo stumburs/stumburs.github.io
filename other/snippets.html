@@ -168,6 +168,13 @@
                                             >Size Of Array</a
                                         >
                                     </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#2d-index-1d-array"
+                                            >2D index for 1D Array</a
+                                        >
+                                    </li>
                                 </ul>
                             </li>
                         </nav>
@@ -412,13 +419,33 @@ int main()
                             id="size-of-array"
                         >
                             <div class="snippet-title">
-                                <h4>Size of array</h4>
+                                <h4>Size of C array</h4>
                             </div>
                             <div class="snippet">
                                 <p class="lead text-center">
-                                    Find the amount of elements inside an array.
+                                    Find the amount of elements inside a C
+                                    array.
                                 </p>
                                 <pre><code>size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
+                            </div>
+                        </div>
+                        <!-- 2D index for a 1D array -->
+                        <div
+                            class="code-snippet"
+                            id="2d-index-1d-array"
+                        >
+                            <div class="snippet-title">
+                                <h4>2D indexing a 1D array</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    Using a 2D index, access a 1D array, as if
+                                    it were 2D
+                                </p>
+                                <pre><code>size_t IndexFrom2D(size_t row, size_t col, size_t length_of_row)
+{
+    return row * length_of_row + col;
+}</code></pre>
                             </div>
                         </div>
                     </div>
