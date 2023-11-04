@@ -203,7 +203,10 @@
                                     <samp>sin</samp> value from
                                     <samp>-1; 1</samp> to <samp>0; 100</samp>.
                                 </p>
-                                <pre><code>double Map(double n, double start1, double stop1, double start2, double stop2)<br>{<br>    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;<br>}</code></pre>
+                                <pre><code class="language-cpp">double Map(double n, double start1, double stop1, double start2, double stop2)
+{
+    return ((n - start1) / (stop1 - start1)) * (stop2 - start2) + start2;
+}</code></pre>
                             </div>
                         </div>
 
@@ -220,7 +223,10 @@
                                     Returns <samp>a*2<sup>n</sup></samp
                                     >.
                                 </p>
-                                <pre><code>int BitshiftMultiplication(int a, int n)<br>{<br>    return a <<= n - 1;<br>}</code></pre>
+                                <pre><code class="language-cpp">int BitshiftMultiplication(int a, int n)
+{
+    return a <<= n - 1;
+}</code></pre>
                             </div>
                         </div>
 
@@ -248,11 +254,17 @@
                                 <p class="lead text-center">
                                     <i>If placed OUTSIDE of class</i>
                                 </p>
-                                <pre><code>std::ostream &operator<<(std::ostream &os, SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                                <pre><code class="language-cpp">std::ostream &operator<<(std::ostream &os, SomeClass &class_object)
+{
+    return os << class_object.value;
+}</code></pre>
                                 <p class="lead text-center">
                                     <i>If placed INSIDE of class</i>
                                 </p>
-                                <pre><code>friend std::ostream &operator<<(std::ostream &os, const SomeClass &class_object)<br>{<br>    return os << class_object.value;<br>}</code></pre>
+                                <pre><code class="language-cpp">friend std::ostream &operator<<(std::ostream &os, const SomeClass &class_object)
+{
+    return os << class_object.value;
+}</code></pre>
                             </div>
                         </div>
 
@@ -275,7 +287,13 @@
                                     >
                                     of most primary data types.
                                 </p>
-                                <pre><code>template &lttypename T><br>std::ostream &operator<<(std::ostream &os, const std::vector&ltT> &vec)<br>{<br>    for (T i : vec)<br>        os << i << ' ';<br>    return os;<br>}</code></pre>
+                                <pre><code class="language-cpp">template &lt;typename T&gt;
+std::ostream &operator<<(std::ostream &os, const std::vector&ltT> &vec)
+{
+    for (T i : vec)
+        os << i << ' ';
+    return os;
+}</code></pre>
                             </div>
                         </div>
 
@@ -295,7 +313,19 @@
                                     <samp>int</samp> type RGB values ranging
                                     <samp>0-255</samp>.
                                 </p>
-                                <pre><code>#include &ltiomanip><br>#include &ltsstream><br>std::string RGBToHEX(int r, int g, int b)<br>{<br>    int values[] = {r, g, b};<br>    std::stringstream sstream;<br>    for (int &v : values)<br>    {<br>        v = v < 0 ? v = 0 : v > 255 ? v = 255 : v;<br>        sstream << std::uppercase << std::setw(2) << std::setfill('0') << std::hex << v;<br>    }<br>    return sstream.str();<br>}</code></pre>
+                                <pre><code class="language-cpp">#include &lt;iomanip&gt;
+#include &lt;sstream&gt;
+std::string RGBToHEX(int r, int g, int b)
+{
+    int values[] = {r, g, b};
+    std::stringstream sstream;
+    for (int &v : values)
+    {
+        v = v < 0 ? v = 0 : v > 255 ? v = 255 : v;
+        sstream << std::uppercase << std::setw(2) << std::setfill('0') << std::hex << v;
+    }
+    return sstream.str();
+}</code></pre>
                             </div>
                         </div>
 
@@ -318,7 +348,8 @@
                                     weird or doesn't work.
                                 </p>
                                 <!-- Re-do code snippets due to prettier complaining. -->
-                                <pre><code>std::vector&ltstd::vector&ltstd::vector&ltint&gt&gt&gt sort_3d_vector_by_amount_of_values(const std::vector&ltstd::vector&ltstd::vector&ltint&gt&gt&gt&amp; vec)
+                                <pre><code class="language-cpp">#include &lt;vector&gt;
+std::vector&ltstd::vector&ltstd::vector&ltint&gt&gt&gt sort_3d_vector_by_amount_of_values(const std::vector&ltstd::vector&ltstd::vector&ltint&gt&gt&gt&amp; vec)
 {
     // Flatten the 3D vector to a 2D vector
     std::vector&ltstd::vector&ltint&gt&gt flat_vec;
@@ -364,7 +395,7 @@
                                     creating a window using Raylib.
                                 </p>
 
-                                <pre><code>#include &lt;raylib.h&gt;
+                                <pre><code class="language-cpp">#include &lt;raylib.h&gt;
 
 constexpr int default_window_width = 1280;
 constexpr int default_window_height = 720;
@@ -410,7 +441,25 @@ int main()
                                     object to start timing. Timing stops when
                                     object destructed.
                                 </p>
-                                <pre><code>#include &ltiostream&gt<br>#include &ltchrono&gt<br><br>struct Timer<br>{<br>    std::chrono::time_point&ltstd::chrono::high_resolution_clock&gt start, end;<br><br>    Timer()<br>    {<br>        start = std::chrono::high_resolution_clock::now();<br>    }<br><br>    ~Timer()<br>    {<br>        end = std::chrono::high_resolution_clock::now();<br>        auto ms = std::chrono::duration_cast&ltstd::chrono::microseconds&gt(end - start);<br>        std::cout << "Timer took " << ms.count() << "us\n";<br>    }<br>};</code></pre>
+                                <pre><code class="language-cpp">#include &ltiostream&gt
+#include &ltchrono&gt
+
+struct Timer
+{
+    std::chrono::time_point&ltstd::chrono::high_resolution_clock&gt start, end;
+    
+    Timer()
+    {
+        start = std::chrono::high_resolution_clock::now();
+    }
+    
+    ~Timer()
+    {
+        end = std::chrono::high_resolution_clock::now();
+        auto ms = std::chrono::duration_cast&ltstd::chrono::microseconds&gt(end - start);
+        std::cout << "Timer took " << ms.count() << "us\n";
+    }
+};</code></pre>
                             </div>
                         </div>
                         <!-- Size of array -->
@@ -426,7 +475,7 @@ int main()
                                     Find the amount of elements inside a C
                                     array.
                                 </p>
-                                <pre><code>size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
+                                <pre><code class="language-cpp">size_t arr_size = sizeof(arr) / sizeof(arr[0]);</code></pre>
                             </div>
                         </div>
                         <!-- 2D index for a 1D array -->
@@ -442,7 +491,7 @@ int main()
                                     Using a 2D index, access a 1D array, as if
                                     it were 2D
                                 </p>
-                                <pre><code>size_t IndexFrom2D(size_t row, size_t col, size_t length_of_row)
+                                <pre><code class="language-cpp">size_t IndexFrom2D(size_t row, size_t col, size_t length_of_row)
 {
     return row * length_of_row + col;
 }</code></pre>
@@ -465,5 +514,18 @@ int main()
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"
         ></script>
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+        />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+        <!--Languages -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/cpp.min.js"></script>
+
+        <script>
+            hljs.highlightAll();
+        </script>
     </body>
 </html>
