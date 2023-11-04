@@ -126,6 +126,25 @@
                                         >
                                     </li>
                                 </ul>
+
+                                <!-- Other -->
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown"
+                                    role="button"
+                                    aria-expanded="false"
+                                    >Raylib</a
+                                >
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="#boilerplate"
+                                            >Boilerplate</a
+                                        >
+                                    </li>
+                                </ul>
+
                                 <!-- Other -->
                                 <a
                                     class="nav-link dropdown-toggle"
@@ -319,6 +338,52 @@
     }
 
     return sorted_vec3d;
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- RAYLIB -->
+                        <!-- Boilerplate -->
+                        <div
+                            class="code-snippet"
+                            id="boilerplate"
+                        >
+                            <div class="snippet-title">
+                                <h4>Raylib boilerplate for a window</h4>
+                            </div>
+                            <div class="snippet">
+                                <p class="lead text-center">
+                                    A basic boilerplate template for quickly
+                                    creating a window using Raylib.
+                                </p>
+
+                                <pre><code>#include &lt;raylib.h&gt;
+
+constexpr int default_window_width = 1280;
+constexpr int default_window_height = 720;
+const char* window_title = "Title";
+constexpr int max_fps = 60;
+
+int main()
+{
+    InitWindow(default_window_width, default_window_height, window_title);
+    SetTargetFPS(max_fps);
+
+    while (!WindowShouldClose())
+    {
+        // Update
+        {
+        }
+
+        // Draw
+        BeginDrawing();
+        {
+            ClearBackground(BLACK);
+            DrawFPS(20, 20);
+        }
+        EndDrawing();
+    }
+    CloseWindow();
 }</code></pre>
                             </div>
                         </div>
