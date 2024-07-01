@@ -2,33 +2,160 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-            crossorigin="anonymous"
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
         />
-        <script src="/js/favicon.js"></script>
-        <link rel="stylesheet" href="css/style.css" />
-        <title>Hello</title>
+        <link
+            rel="stylesheet"
+            href="css/main.css"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="img/favicon.png"
+        />
+        <title>stumburs</title>
     </head>
     <body>
-        <!-- Nav -->
-        <script src="/js/navbar.js"></script>
+        <div class="main-content">
+            <h1 id="hello-text">Hello!</h1>
+            <h2 id="about-text">
+                I'm Artūrs. <br />I enjoy creating various technical, as well as
+                interactive visual <i>things</i> mostly in C++, some of which
+                you can see below!
+            </h2>
 
-        <div class="title-text">
-            <h1 class="title display-1">Hello</h1>
+            <div class="projects">
+                <div class="project">
+                    <a
+                        href="https://github.com/stumburs/vissort"
+                        target="_blank"
+                    >
+                        <div class="project-image">
+                            <img
+                                class="project-image"
+                                src="/img/vissort.png"
+                                alt="vissort"
+                            />
+                        </div>
+                        <div class="project-description">
+                            <p>
+                                Interactive and satisfying sorting algorithm
+                                visualizer.
+                                <br /><br />
+                                I began refactoring the project, but was
+                                interrupted by other projects before I could
+                                finish it.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a
+                        href="https://github.com/stumburs/WallpaperGenerator"
+                        target="_blank"
+                    >
+                        <div class="project-image">
+                            <img
+                                class="project-image"
+                                src="/img/image_generator.png"
+                                alt="Image Generator"
+                            />
+                        </div>
+                        <div class="project-description">
+                            <p>
+                                Interactive image generator utilizing various
+                                mathematical principles like flowfields and
+                                voronoi graphs. <br /><br />
+                                It was created as part of my qualification work.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a
+                        href="https://github.com/stumburs/desktop-timelapse-recorder"
+                        target="_blank"
+                    >
+                        <div class="project-image">
+                            <img
+                                class="project-image"
+                                src="/img/timelapse_recorder.png"
+                                alt="desktop-timelapse-recorder"
+                            />
+                        </div>
+                        <div class="project-description">
+                            <p>
+                                A simple, yet usable desktop timelapse recorder
+                                I made with Java + Swing, mainly because I just
+                                wanted to try out Java.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a
+                        href="https://github.com/stumburs/bmpr"
+                        target="_blank"
+                    >
+                        <div class="project-image">
+                            <img
+                                class="project-image"
+                                src="/img/bmpr.png"
+                                alt="bmpr"
+                            />
+                        </div>
+                        <div class="project-description">
+                            <p>
+                                Basic header only C++ library for generating
+                                .bmp images by setting pixels, drawing lines and
+                                shapes.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="project">
+                    <a
+                        href="https://github.com/stumburs/cbt"
+                        target="_blank"
+                    >
+                        <div class="project-image">
+                            <img
+                                class="project-image"
+                                src="/img/cbt.png"
+                                alt="cbt"
+                            />
+                        </div>
+                        <div class="project-description">
+                            <p>
+                                My custom C/C++ build tool I made for fun. I
+                                doesn't solve anything unique, but it's quite
+                                simple to use for smaller projects.
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a
+                        href="https://github.com/stumburs"
+                        target="_blank"
+                    >
+                        <div class="project-image">
+                            <img
+                                class="project-image"
+                                src="/img/github.png"
+                                alt="github"
+                            />
+                        </div>
+                        <div class="project-description">
+                            <p>More on my GitHub!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-
-        <!-- Footer -->
-        <script src="/js/footer.js"></script>
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"
-        ></script>
     </body>
 </html>
