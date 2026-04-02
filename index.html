@@ -1,180 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <link
-            rel="stylesheet"
-            href="css/main.css"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="img/favicon.png"
-        />
-        <title>stumburs</title>
-    </head>
-    <body>
-        <div class="main-content">
-            <h1 id="hello-text">Hello!</h1>
-            <h2 id="about-text">
-                I'm Artūrs. <br />I enjoy creating various technical, as well as
-                interactive visual <i>things</i> mostly in C++, some of which
-                you can see below!
-            </h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stumburs</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="site-name">stumburs</div>
 
-            <div class="projects">
-                <div class="project">
-                    <a
-                        href="https://github.com/stumburs/vissort-legacy"
-                        target="_blank"
-                    >
-                        <div class="project-image">
-                            <img
-                                class="project-image"
-                                src="/img/vissort.png"
-                                alt="vissort"
-                            />
-                        </div>
-                        <div class="project-description">
-                            <p>
-                                Interactive and satisfying sorting algorithm
-                                visualizer.
-                                <br /><br />
-                                I began refactoring the project, but was
-                                interrupted by other projects before I could
-                                finish it.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project">
-                    <a
-                        href="https://github.com/stumburs/WallpaperGenerator"
-                        target="_blank"
-                    >
-                        <div class="project-image">
-                            <img
-                                class="project-image"
-                                src="/img/image_generator.png"
-                                alt="Image Generator"
-                            />
-                        </div>
-                        <div class="project-description">
-                            <p>
-                                Interactive image generator utilizing various
-                                mathematical principles like flowfields and
-                                voronoi graphs. <br /><br />
-                                It was created as part of my qualification work.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project">
-                    <a
-                        href="https://github.com/stumburs/desktop-timelapse-recorder"
-                        target="_blank"
-                    >
-                        <div class="project-image">
-                            <img
-                                class="project-image"
-                                src="/img/timelapse_recorder.png"
-                                alt="desktop-timelapse-recorder"
-                            />
-                        </div>
-                        <div class="project-description">
-                            <p>
-                                A simple, yet usable desktop timelapse recorder
-                                I made with Java + Swing, mainly because I just
-                                wanted to try out Java.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project">
-                    <a
-                        href="https://github.com/stumburs/bmpr"
-                        target="_blank"
-                    >
-                        <div class="project-image">
-                            <img
-                                class="project-image"
-                                src="/img/bmpr.png"
-                                alt="bmpr"
-                            />
-                        </div>
-                        <div class="project-description">
-                            <p>
-                                Basic header only C++ library for generating
-                                .bmp images by setting pixels, drawing lines and
-                                shapes.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project">
-                    <a
-                        href="https://github.com/stumburs/mgo"
-                        target="_blank"
-                    >
-                        <div class="project-image">
-                            <img
-                                class="project-image"
-                                src="/img/mgo.png"
-                                alt="mgo"
-                            />
-                        </div>
-                        <div class="project-description">
-                            <p>
-                                Markov chain package written in Go for basic
-                                text generation.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project">
-                    <a
-                        href="https://github.com/stumburs/cbt"
-                        target="_blank"
-                    >
-                        <div class="project-image">
-                            <img
-                                class="project-image"
-                                src="/img/cbt.png"
-                                alt="cbt"
-                            />
-                        </div>
-                        <div class="project-description">
-                            <p>
-                                My custom C/C++ build tool I made for fun. It
-                                doesn't solve anything unique, but it's quite
-                                simple to use for smaller projects.
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project">
-                    <a
-                        href="https://github.com/stumburs"
-                        target="_blank"
-                    >
-                        <div class="project-image">
-                            <img
-                                class="project-image"
-                                src="/img/github.png"
-                                alt="github"
-                            />
-                        </div>
-                        <div class="project-description">
-                            <p>More on my GitHub!</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </body>
+    <svg id="viz"></svg>
+
+    <div id="info-bar">
+      <span id="info-name"></span>
+      <span id="info-sep">-</span>
+      <span id="info-desc"></span>
+      <div id="info-tags"></div>
+    </div>
+
+    <div id="hint">hover/click</div>
+
+    <script type="module" src="js/voronoi.js"></script>
+  </body>
 </html>
