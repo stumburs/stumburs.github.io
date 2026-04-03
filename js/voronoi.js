@@ -59,7 +59,7 @@ function render() {
     .attr("x", (_, i) => centroidX(voronoi, i))
     .attr("y", (_, i) => centroidY(voronoi, i))
     .attr("fill", (_, i) =>
-      i === hov ? "rgba(255, 255, 255, 0.8" : "rgba(255, 255, 255, 0.3",
+      i === hov ? "rgba(255, 255, 255, 0.8)" : "rgba(255, 255, 255, 0.3)",
     )
     .attr("font-size", (_, i) => labelSize(voronoi, i))
     .text((d) => d.name.toLowerCase());
