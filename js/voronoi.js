@@ -11,6 +11,7 @@ const hint = document.getElementById("hint");
 let W = window.innerWidth;
 let H = window.innerHeight;
 let hov = -1;
+let dragTarget = null; // { i, x, y }
 
 // Cell colors
 const shades = PROJECTS.map((_, i) =>
@@ -31,6 +32,11 @@ const pts = PROJECTS.map((_, i) => ({
 
 const cellGroup = svg.append("g").attr("class", "cell-group");
 const labelGroup = svg.append("g").attr("class", "label-group");
+const drag = d3
+  .drag()
+  .on("start", dragStart)
+  .on("drag", dragging)
+  .on("end", dragEnd);
 
 function render() {
   const delaunay = d3.Delaunay.from(pts.map((p) => [p.x, p.y]));
@@ -42,6 +48,7 @@ function render() {
     .enter()
     .append("path")
     .attr("class", "cell")
+    .call(drag)
     .on("mouseenter", onCellEnter)
     .on("mouseleave", onCellLeave)
     .on("click", onCellClick)
@@ -117,7 +124,23 @@ function tick() {
 function movePts() {
   const { speed, edgePad } = CONFIG;
 
-  pts.forEach((p) => {
+  pts.forEach((p, idx) => {
+    if (dragTarget && dragTarget.i === idx) {
+      const p = pts[idx];
+
+      const dx = dragTarget.x - p.x;
+      const dy = dragTarget.y - p.y;
+
+      const spring = 0.02; // stiffness
+      const damping = 0.85; // drag resistance
+
+      p.vx += dx * spring;
+      p.vy += dy * spring;
+
+      p.vx *= damping;
+      p.vy *= damping;
+    }
+
     p.x += p.vx;
     p.y += p.vy;
 
@@ -152,6 +175,23 @@ function movePts() {
       p.vy * 1.1;
     }
   });
+}
+
+// Dragging handlers
+function dragStart(event, d) {
+  const i = PROJECTS.indexOf(d);
+  dragTarget = { i, x: event.x, y: event.y };
+}
+
+function dragging(event, d) {
+  if (dragTarget) {
+    dragTarget.x = event.x;
+    dragTarget.y = event.y;
+  }
+}
+
+function dragEnd(event, d) {
+  dragTarget = null;
 }
 
 // Resize
