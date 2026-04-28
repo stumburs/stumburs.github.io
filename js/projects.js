@@ -26,7 +26,7 @@ export const PROJECTS = [
   {
     name: "vissort",
     desc: "Sorting algorithm visualizer",
-    url: "https://github.com/stumburs/vpp",
+    url: "https://github.com/stumburs/vissort-legacy",
     tags: ["visual", "deprecated"],
   },
   {
