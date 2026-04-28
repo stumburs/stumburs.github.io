@@ -48,6 +48,12 @@ export const PROJECTS = [
     tags: ["library", "visual"],
   },
   {
+    name: "tidy",
+    desc: "Go tool to clean your desktop by archiving files to a specific directory",
+    url: "https://github.com/stumburs/tidy",
+    tags: ["tool"],
+  },
+  {
     name: "GitHub",
     desc: "My GitHub",
     url: "https://github.com/stumburs",
