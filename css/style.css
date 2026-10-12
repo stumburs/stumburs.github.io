@@ -7,137 +7,143 @@
 }
 
 :root {
-  --font-mono: "Azeret Mono", "Courier New", monospace;
+  --font: "JetBrains Mono", monospace;
+  --fg: rgba(255, 255, 255, 0.95);
+  --fg-dim: rgba(255, 255, 255, 0.72);
+  --fg-faint: rgba(255, 255, 255, 0.48);
+  --line: rgba(255, 255, 255, 0.08);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap");
-html,
-body {
-  width: 100%;
+html {
   height: 100%;
-  overflow: hidden;
-  background: #050505;
-  font-family: var(--font-mono);
-  cursor: crosshair;
 }
 
-/* Voronoi */
-#viz {
+body {
+  min-height: 100%;
+  background: #000;
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: crosshair;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#fluid {
   position: fixed;
   inset: 0;
+  z-index: 0;
+  display: block;
   width: 100%;
   height: 100%;
 }
 
-.cell {
-  cursor: crosshair;
-  transition: fill 0.45s ease;
-}
-
-.cell-label {
-  font-family: var(--font-mono);
-  text-anchor: middle;
-  dominant-baseline: middle;
-  pointer-events: none;
-  text-transform: lowercase;
-  letter-spacing: 0.1em;
-  transition: fill 0.45s ease;
-}
-
-/* Top left */
-#site-name {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: var(--font-mono);
-  font-size: 24px;
-  font-weight: bold;
-  letter-spacing: 0.22em;
-  text-transform: lowercase;
-  z-index: 10;
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Bottom */
-#info-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px 30px 28px;
+main {
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+  min-height: 100vh;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
   align-items: baseline;
-  gap: 16px;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  z-index: 10;
-  pointer-events: none;
 }
 
-#info-bar.visible {
-  opacity: 1;
+header a {
+  color: var(--fg-dim);
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
-#info-name {
-  font-family: var(--font-mono);
+header a:hover {
+  color: var(--fg);
+}
+
+h1 {
   font-size: 24px;
-  font-weight: bolder;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
-}
-
-#info-sep {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 24px;
-}
-
-#info-desc {
-  font-family: var(--font-mono);
-  font-size: 24px;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.04em;
-}
-
-#info-tags {
-  margin-left: auto;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.tag {
-  font-family: var(--font-mono);
-  font-size: 16px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  padding: 3px 8px;
-}
-
-/* Bottom right */
-#hint {
-  position: fixed;
-  bottom: 24px;
-  right: 28px;
-  font-family: var(--font-mono);
-  font-size: 20px;
+  font-weight: 500;
   letter-spacing: 0.2em;
-  text-transform: lowercase;
-  color: rgba(255, 255, 255, 0.3);
-  z-index: 10;
-  pointer-events: none;
-  user-select: none;
-  transition:
-    opacity 0.3,
-    ease;
 }
 
-#hint.hidden {
-  opacity: 0;
+.label {
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+}
+
+.projects,
+.rants {
+  list-style: none;
+}
+
+.projects a {
+  display: grid;
+  grid-template-columns: minmax(0, 270px) 1fr;
+  align-items: baseline;
+  gap: 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-dim);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.projects li:first-child a {
+  border-top: 1px solid var(--line);
+}
+
+.projects a:hover {
+  color: var(--fg);
+}
+
+.p-name {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.p-desc {
+  opacity: 0.9;
+}
+
+.rants a {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-dim);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.rants li:first-child a {
+  border-top: 1px solid var(--line);
+}
+
+.rants a:hover {
+  color: var(--fg);
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .projects a {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
 }

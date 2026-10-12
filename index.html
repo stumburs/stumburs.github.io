@@ -4,22 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>stumburs</title>
+    <link
+      rel="icon"
+      type="image/webp"
+      href="https://cdn.7tv.app/emote/01K6B3Y3SG5ZBAWXXVKX7BKBE5/4x.webp"
+    />
+    <meta name="description" content="stumburs — projects" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div id="site-name">stumburs</div>
+    <canvas id="fluid"></canvas>
 
-    <svg id="viz"></svg>
+    <main>
+      <header>
+        <h1>stumburs</h1>
+        <a
+          href="https://github.com/stumburs"
+          target="_blank"
+          rel="noopener noreferrer"
+          >github</a
+        >
+      </header>
+      <section>
+        <p class="label">projects</p>
+        <ul class="projects" id="projects"></ul>
+      </section>
+      <section>
+        <p class="label">rants</p>
+        <ul class="rants" id="rants"></ul>
+      </section>
+    </main>
 
-    <div id="info-bar">
-      <span id="info-name"></span>
-      <span id="info-sep">-</span>
-      <span id="info-desc"></span>
-      <div id="info-tags"></div>
-    </div>
-
-    <div id="hint">hover/click</div>
-
-    <script type="module" src="js/voronoi.js"></script>
+    <script src="js/proper_fluid.js"></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>
