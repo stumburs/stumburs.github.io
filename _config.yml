@@ -1,0 +1,26 @@
+title: stumburs
+author: stumburs
+url: "https://stumburs.github.io"
+baseurl: ""
+description: stumburs — projects and rants
+repository: stumburs/stumburs.github.io
+favicon: "https://cdn.7tv.app/emote/01K6B3Y3SG5ZBAWXXVKX7BKBE5/4x.webp"
+
+remote_theme: riggraz/no-style-please
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-remote-theme
+
+theme_config:
+  appearance: "auto"
+  show_description: false
+  back_home_text: "Back"
+  date_format: "%Y-%m-%d"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/

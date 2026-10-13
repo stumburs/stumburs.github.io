@@ -18,13 +18,17 @@ fetch("js/rants.json")
   .then((response) => response.json())
   .then((rants) => {
     rantList.innerHTML = rants
-      .map(
-        (rant) => `
+      .map((rant) => {
+        const isExternal = /^https?:\/\//.test(rant.url);
+        const attrs = isExternal
+          ? `href="${rant.url}" target="_blank" rel="noopener noreferrer"`
+          : `href="${rant.url}"`;
+        return `
       <li>
-        <a href="${rant.url}" target="_blank" rel="noopener noreferrer">${rant.title}</a>
+        <a ${attrs}>${rant.title}</a>
       </li>
-    `,
-      )
+    `;
+      })
       .join("");
   })
   .catch(() => {});
