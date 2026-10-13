@@ -37,7 +37,7 @@ fetch("js/rants.json")
 // pointer moves, so estimate fluid brightness behind each content block
 // from recent pointer positions and flip covered blocks to dark text.
 const FLUID_GLOW_RADIUS = 130; // px, approx. reach of a splat + bloom glow
-const FLUID_FADE_MS = 1600; // how fast old splats stop counting
+const FLUID_FADE_MS = 400; // how fast old splats stop counting
 const FLUID_FLIP_THRESHOLD = 0.05; // lower flips more eagerly
 
 const splats = [];
